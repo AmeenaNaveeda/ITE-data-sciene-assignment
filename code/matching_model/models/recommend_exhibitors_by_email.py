@@ -17,7 +17,9 @@ def recommend_exhibitors_for_visitor_email(email, top_k=7, penalize=True):
     """
     - return top_k exhibitors for an answer_text
     """
-    answer_exhibitor_matching_df = pd.read_csv("../results/answer_to_exhibitor_mapping.csv")
+    BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    RESULTS_PATH = os.path.join(BASE_DIR, "results")
+    answer_exhibitor_matching_df = pd.read_csv(os.path.join(RESULTS_PATH, "answer_to_exhibitor_mapping.csv"))
     
     visitors_df = load_visitors()
     exhibitors_df = load_exhibitors()

@@ -15,7 +15,9 @@ def recommend_visitors_for_exhibitor(exhibitor_id, top_k=7):
     return top_k visitors for a given exhibitor id
     """
 
-    answer_exhibitor_matching_df = pd.read_csv("../results/answer_to_exhibitor_mapping.csv")
+    BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    RESULTS_PATH = os.path.join(BASE_DIR, "results")
+    answer_exhibitor_matching_df = pd.read_csv(os.path.join(RESULTS_PATH, "answer_to_exhibitor_mapping.csv"))
     visitors_df = load_visitors()
     answer_exhibitor_matching_df["answer_id"] = answer_exhibitor_matching_df["answer_id"].astype(str)
 
