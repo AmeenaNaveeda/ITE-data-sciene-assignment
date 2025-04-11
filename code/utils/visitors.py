@@ -28,7 +28,6 @@ def preprocess_visitor_answers(df: pd.DataFrame, column_name: str = "answer") ->
     Cleans a category column in a DataFrame:
     - Replaces '/' with 'or', '&' with 'and'
     - Converts to lowercase and strips whitespace
-    Adds a new column: <column_name>_cleaned
     """
     df[f"{column_name}_cleaned"] = df[column_name].apply(
         lambda text: (
