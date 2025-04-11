@@ -74,7 +74,7 @@ def preprocess_visitors(visitors_df):
     ], axis=1)
     return visitor_expanded_answer_df
 
-def clean_visitors(visitor_expanded_answer_df, merged_answers_questions_df):
+def filter_valid_visitor_answers(visitor_expanded_answer_df, merged_answers_questions_df):
     """
     - join visitor answer with question
     - drop entries without valid answerid
@@ -86,6 +86,6 @@ def clean_visitors(visitor_expanded_answer_df, merged_answers_questions_df):
         how='left',
         suffixes=('', '_merged_answer')
     )
-    visitor_merge_answer_valid_df = visitor_merge_answer_df.dropna(subset=['id_answer'])
-    return visitor_merge_answer_valid_df
+    valid_visitor_answer_df = visitor_merge_answer_df.dropna(subset=['id_answer'])
+    return valid_visitor_answer_df
 
