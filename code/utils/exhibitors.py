@@ -40,7 +40,6 @@ def merged_exhibitors_categories(exploded_exhibitors_df, exhibitors_categories_d
 
 def preprocess_exhibitor_categories(exhibitor_categories_df: pd.DataFrame, column_name: str = "categoryName") -> pd.DataFrame:
     """
-    Cleans a category column in a DataFrame:
     - Removes leading numbers
     - Replaces '/' with 'or', '&' with 'and'
     - Converts to lowercase and strips whitespace

@@ -25,7 +25,6 @@ def load_visitors_questions():
 
 def preprocess_visitor_answers(df: pd.DataFrame, column_name: str = "answer") -> pd.DataFrame:
     """
-    Cleans a category column in a DataFrame:
     - Replaces '/' with 'or', '&' with 'and'
     - Converts to lowercase and strips whitespace
     """
