@@ -1,0 +1,6 @@
+matplotlib
+seaborn
+torch
+fastembed
+pandas
+sentence_transformers
